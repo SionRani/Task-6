@@ -1,0 +1,12 @@
+SELECT
+    STRFTIME('%Y-%m', order_date) AS sales_year_month,
+    SUM(amount) AS total_revenue,
+    COUNT(DISTINCT order_id) AS total_volume
+FROM
+    online_sales
+GROUP BY
+    sales_year_month
+ORDER BY
+    sales_year_month;
+
+    
